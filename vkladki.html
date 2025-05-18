@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Знаменитые места Владимирской области</title>
+    <style>
+        /* Основные стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        h2 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        img {
+            max-width: 300px;
+            margin-right: 20px;
+            vertical-align: middle;
+        }
+
+        /* Навигационные вкладки */
+        .tabs {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .tabs ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .tabs ul li {
+            display: inline-block;
+            padding: 10px 30px;
+            cursor: pointer;
+            font-size: 18px;
+            color: #555;
+            transition: background-color 0.3s ease;
+        }
+
+        .tabs ul li.active {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .tabs ul li:hover {
+            background-color: #eeeeee;
+        }
+
+        /* Контент вкладок */
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Дополнительные стили для изображений и ссылок */
+        .tab-image {
+            float: left;
+            margin-right: 20px;
+        }
+
+        .tab-link {
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <ul>
+            <li onclick="openTab(event, 'churches')">Главная</li>
+            <li class="active" onclick="openTab(event, 'museums')">Музеи</li>
+            <li onclick="openTab(event, 'churches')">Храмы</li>
+            <li onclick="openTab(event, 'nature')">Природа</li>
+            <li onclick="openTab(event, 'cities')">Города</li>
+        </ul>
+    </div>
+
+    <div id="content">
+        <!-- Вкладка "Музеи" -->
+        <section id="museums" class="tab-content active">
+            <h2>Музеи Владимирской области</h2>
+            <div class="tab-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Vladimir-Suzdal_Museum.jpg/250px-Vladimir-Suzdal_Museum.jpg" alt="Владимиро-Суздальский музей-заповедник" class="tab-image">
+                <h3>Владимиро-Суздальский музей-заповедник</h3>
+                <p>
+                    <strong>Адрес:</strong> г. Владимир, ул. Большая Московская, д. 58<br>
+                    <strong>Описание:</strong> Это крупнейший музей-заповедник в регионе, где можно увидеть экспонаты, посвящённые истории и культуре Владимирской земли.<br>
+                    <a href="http://www.vladmuseum.ru/" target="_blank" class="tab-link">Подробнее на сайте музея</a>
+                </p>
+            </div>
+            <hr>
+            <div class="tab-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Musey_kristalla_i_lakovoy_minjatury_v_Gus-Khrustalnom_2018.jpg/200px-Musey_kristalla_i_lakovoy_minjatury_v_Gus-Khrustalnom_2018.jpg" alt="Музей хрусталя и лаковой миниатюры" class="tab-image">
+                <h3>Музей хрусталя и лаковой миниатюры</h3>
+                <p>
+                    <strong>Адрес:</strong> г. Гусь-Хрустальный, ул. Калинина, д. 2а<br>
+                    <strong>Описание:</strong> Этот музей посвящен уникальным художественным промыслам региона, таким как производство хрусталя и лаковая миниатюра.<br>
+                    <a href="http://crystal-museum.ru/" target="_blank" class="tab-link">Подробнее на сайте музея</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Вкладка "Храмы" -->
+        <section id="churches" class="tab-content">
+            <h2>Храмы Владимирской области</h2>
+            <div class="tab-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Uspensky_Sobor_Vladimir_%28Kremlin%29.JPG/250px-Uspensky_Sobor_Vladimir_%28Kremlin%29.JPG" alt="Успенский собор во Владимире" class="tab-image">
+                <h3>Успенский собор во Владимире</h3>
+                <p>
+                    <strong>Адрес:</strong> г. Владимир, ул. Большая Московская, д. 56<br>
+                    <strong>Описание:</strong> Успенский собор — выдающийся памятник древнерусского зодчества, являющийся объектом Всемирного наследия ЮНЕСКО.<br>
+                    <a href="https://whc.unesco.org/en/list/633" target="_blank" class="tab-link">Информация на сайте ЮНЕСКО</a>
+                </p>
+            </div>
+            <hr>
+            <div class="tab-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C_%D0%9F%D0%BE%D0%BA%D1%80%D0%BE%D0%B2%D0%B0_%D0%BD%D0%B0_%D0%9D%D0%B5%D1%80%D0%BB%D0%B8_%E2%84%96_002.jpg/220px-%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C_%D0%9F%D0%BE%D0%BA%D1%80%D0%BE%D0%B2%D0%B0_%D0%BD%D0%B0_%D0%9D%D0%B5%D1%80%D0%BB%D0%B8_%E2%84%96_002.jpg" alt="Церковь Покрова на Нерли" class="tab-image">
+                <h3>Церковь Покрова на Нерли</h3>
+                <p>
+                    <strong>Адрес:</strong> Боголюбово, близ реки Нерль<br>
+                    <strong>Описание:</strong> Церковь Покрова на Нерли — жемчужина русской архитектуры, расположенная на берегу реки Нерль. Является одним из символов древней Руси.<br>
+                    <a href="https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C_%D0%9F%D0%BE%D0%BA%D1%80%D0%BE%D0%B2%D0%B0_%D0%BD%D0%B0_%D0%9D%D0%B5%D1%80%D0%BB%D0%B8" target="_blank" class="tab-link">Статья на Википедии</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Вкладка "Природа" -->
+        <section id="nature" class="tab-content">
+            <h2>Природные достопримечательности Владимирской области</h2>
+            <div class="tab-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Russia_Meshchera_National_Park_%288299342784%29.jpg/250px-Russia_Meshchera_National_Park_%288299342784%29.jpg" alt="Национальный парк Мещера" class="tab-image">
+                <h3>Национальный парк "Мещера"</h3>
+                <p>
+                    <strong>Расположение:</strong> Окрестности городов Гусь-Хрустального и Судогды<br>
+                    <strong>Описание:</strong> Национальный парк "Мещера" охватывает обширную территорию лесов, болот и озёр, предлагая туристам уникальные природные ландшафты.<br>
+                    <a href="https://npmeshchera.ru/" target="_blank" class="tab-link">Официальный сайт парка</a>
+                </p>
+            </div>
+            <hr>
+            <div class="tab-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Svetloyar_Lake_-_panoramio.jpg/220px-Svetloyar_Lake_-_panoramio.jpg" alt="Озеро Светлояр" class="tab-image">
+                <h3>Озеро Светлояр</h3>
+                <p>
+                    <strong>Расположение:</strong> Около села Владимирское, Юрьев-Польский район<br>
+                    <strong>Описание:</strong> Озеро Светлояр окутано множеством легенд и преданий, привлекающих паломников и любителей загадочных мест.<br>
+                    <a href="https://ozerosvetloyar.ru/" target="_blank" class="tab-link">Сайт о озере Светлояр</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Вкладка "Города" -->
+        <section id="cities" class="tab-content">
+            <h2>Города Владимирской области</h2>
+            <div class="tab-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Dmitrievsky_Cathedral_in_Vladimir.jpg/240px-Dmitrievsky_Cathedral_in_Vladimir.jpg" alt="Город Владимир" class="tab-image">
+                <h3>Владимир</h3>
+                <p>
+                    <strong>Описание:</strong> Владимир — исторический центр Золотого кольца России, знаменитый своими архитектурными памятниками и культурным наследием.<br>
+                    <a href="https://visit-vladimir.ru/" target="_blank" class="tab-link">Туризм во Владимире</a>
+                </p>
+            </div>
+            <hr>
+            <div class="tab-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Aleksandrovskiy_Kreml_view_from_Bridge_on_Reka_Seraya.jpg/180px-Aleksandrovskiy_Kreml_view_from_Bridge_on_Reka_Seraya.jpg" alt="Город Александров" class="tab-image">
+                <h3>Александров</h3>
+                <p>
+                    <strong>Описание:</strong> Александров — небольшой город с богатой историей, известный своей ролью в эпоху правления Ивана Грозного.<br>
+                    <a href="https://aleksandrov.ru/tourism/" target="_blank" class="tab-link">Туризм в Александрове</a>
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Скрипт для переключения между вкладками -->
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+
+            // Получение всех вкладок и скрывание их
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Снятие активного класса со всех вкладок
+            tablinks = document.getElementsByClassName("tabs ul li");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Отображение выбранной вкладки и установка активного класса
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Популярные места Владимирской области</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <h1>Hello World</h1>
+    <p>I'm hosted with GitHub Pages.</p>
+  <header>
+    <div class="container">
+      <h1></h1>
+      <nav>
+        <ul>
+          <li><a href="#about">О регионе</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="hero">
+    <div class="hero-content">
+      <h2>Откройте для себя красоту Владимирской области</h2>
+      <p>Исторические памятники, природные заповедники и уникальные музеи ждут вас!</p>
+      <a href="#categories" class="btn">Начать путешествие</a>
+    </div>
+  </section>
+
+  <section id="about" class="container">
+    <h2>О Владимирской области</h2>
+    <p>Владимирская область — это уникальный регион с богатой историей, культурным наследием и красивой природой. Здесь вы найдете древние храмы, музеи, национальные парки и многое другое.</p>
+  </section>
+
+  <section id="slider">
+    <div class="slider">
+      <div class="slide active">
+        <img src="Gold gate.jpeg" alt="Золотые ворота">
+        <div class="slide-text">Золотые ворота — символ Владимира</div>
+      </div>
+      <div class="slide">
+        <img src="Cerkovchka.jpg" alt="Церковь Покрова на Нерли">
+        <div class="slide-text">Церковь Покрова на Нерли — жемчужина архитектуры</div>
+      </div>
+      <div class="slide">
+        <img src="park.jpg" alt="Мещёрский национальный парк">
+        <div class="slide-text">Мещёрский национальный парк — природа в её лучшем проявлении</div>
+      </div>
+    </div>
+    <button class="slider-btn prev" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+    <button class="slider-btn next" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+  </section>
+
+  <section id="categories" class="container">
+    <h2>Категории мест</h2>
+    <div class="category-grid">
+      <a href="museums.html" class="category-card">
+        <img src="Museum.jpg" alt="Музеи">
+        <h3>Музеи</h3>
+      </a>
+      <a href="churches.html" class="category-card">
+        <img src="Xram.jpg" alt="Храмы">
+        <h3>Храмы</h3>
+      </a>
+      <a href="nature.html" class="category-card">
+        <img src="priroda.jpg" alt="Природа">
+        <h3>Природа</h3>
+      </a>
+      <a href="cities.html" class="category-card">
+        <img src="goroda.jpg" alt="Города">
+        <h3>Города</h3>
+      </a>
+    </div>
+  </section>
+
+  <section id="map">
+    <h2>Карта достопримечательностей</h2>
+    <div id="map-container"></div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Путеводитель по Владимирской области</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="JSn.js"></script>
+  <script src="https://maps.api.2gis.ru/2.0/loader.js"></script>
+  <script>
+    DG.then(function() {
+      const map = DG.map('map-container', {
+        center: [56.1366, 40.3966],
+        zoom: 9
+        
+      });
+
+      // Пример отметки на карте
+      DG.marker([56.1286, 40.4064]).addTo(map).bindPopup('Владимир');
+      DG.marker([56.1304, 40.4122]).addTo(map).bindPopup('Кремль, Золотые ворота');
+      DG.marker([56.3343, 40.4125]).addTo(map).bindPopup('Музей хрусталя');
+      DG.marker([56.2317, 40.4255]).addTo(map).bindPopup('Спасо-Преображенский монастырь');
+    });
+  </script>
+</body>
+</html>
